@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Actualizar el contador de tareas
     function updateTaskCounter() {
-        taskCounter.innerHTML = `Pending tasks: ${pendingTasks} | Completed tasks: ${completedTasks}`;
+        taskCounter.innerHTML = `Tareas pendientes: ${pendingTasks} | Tareas completadas: ${completedTasks}`;
     }
 
     // Añadir nueva tarea
