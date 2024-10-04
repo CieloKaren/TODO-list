@@ -6,12 +6,12 @@ document.addEventListener('DOMContentLoaded', () => {
     let pendingTasks = 0;
     let completedTasks = 0;
 
-    // Actualizar el contador de tareas
+    // Actualiza el contador de tareas
     function updateTaskCounter() {
         taskCounter.innerHTML = `Tareas pendientes: ${pendingTasks} | Tareas completadas: ${completedTasks}`;
     }
 
-    // Añadir nueva tarea
+    // Añade nueva tarea
     document.querySelector('#new-task').onsubmit = (e) => {
         e.preventDefault();
         if (taskInput.value.trim() !== "") {
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
             const taskDate = document.createElement('span');
             taskDate.classList.add('task-date');
-            taskDate.textContent = `Día: ${formattedDate}`; // Establecer fecha automáticamente
+            taskDate.textContent = `Día: ${formattedDate}`; // Establece fecha automaticamente
     
             const deleteBtn = document.createElement('button');
             deleteBtn.innerHTML = 'Eliminar';
@@ -55,12 +55,12 @@ document.addEventListener('DOMContentLoaded', () => {
             taskList.appendChild(li);
     
             taskInput.value = '';
-            taskDateInput.value = ''; // Limpiar el input de fecha
+            taskDateInput.value = ''; 
     
             pendingTasks++;
             updateTaskCounter();
     
-            // Marcar tarea como completada o pendiente
+            // Marca tarea como completada o pendiente
             cb.addEventListener('change', function () {
                 if (this.checked) {
                     li.classList.add('completed');
@@ -76,13 +76,13 @@ document.addEventListener('DOMContentLoaded', () => {
     
             editBtn.addEventListener('click', function () {
                 if (li.classList.contains('editing')) {
-                    // Guardar cambios
+                    // Guarda cambios
                     taskText.textContent = taskInput.value.trim();
-                    taskDate.textContent = `Día: ${taskDateInput.value || formattedDate}`; // Mantener la fecha actual si no se proporciona otra
+                    taskDate.textContent = `Día: ${taskDateInput.value || formattedDate}`; // Mantiene la fecha actual si no se proporciona otra
                     li.classList.remove('editing');
                     editBtn.innerHTML = 'Editar';
                 } else {
-                    // Hacer editable
+                    // Hace editable
                     li.classList.add('editing');
                     taskInput.value = taskText.textContent;
                     taskDateInput.value = taskDate.textContent.replace('Día: ', '');
@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
 
-            // Eliminar tarea
+            // Elimina tarea
             deleteBtn.addEventListener('click', function () {
                 if (cb.checked) {
                     completedTasks--;
@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Limpiar tareas completadas
+    // Limpia tareas completadas
     document.querySelector('#clear-completed').onclick = () => {
         document.querySelectorAll('li.completed').forEach((item) => {
             item.remove();
@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
         updateTaskCounter();
     };
 
-    // Limpiar todas las tareas
+    // Limpia todas las tareas
     document.querySelector('#clear-all').onclick = () => {
         taskList.innerHTML = '';
         pendingTasks = 0;

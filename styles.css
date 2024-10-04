@@ -178,7 +178,7 @@ li.editing input[type="text"] {
     }
 
     input[type="date"] {
-        width: 70%; /* Aseguramos que el input de fecha también sea responsivo */
+        width: 70%; /* Asegura que el input de fecha sea responsivo */
     }
 
     .buttons-container button {
@@ -193,7 +193,7 @@ li.editing input[type="text"] {
 
 @media (max-width: 400px) {
     input[type="text"],
-    input[type="date"] { /* Aseguramos que ambos inputs tengan el mismo ancho */
+    input[type="date"] { /* Asegura que ambos inputs tengan el mismo ancho */
         width: 100%;
     }
 
@@ -207,11 +207,11 @@ li.editing input[type="text"] {
     }
 
     li {
-        flex-direction: column; /* Cambiar la dirección de flex para una mejor visualización en pantallas pequeñas */
+        flex-direction: column; /* Cambia la dirección de flex para una mejor visualización en pantallas pequeñas */
         align-items: flex-start; /* Alinear al inicio para una mejor legibilidad */
     }
 
     .task-controls {
-        margin-top: 10px; /* Añadir un margen para separar los controles */
+        margin-top: 10px; /* Añade un margen para separar los controles */
     }
 }
