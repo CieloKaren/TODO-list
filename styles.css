@@ -156,6 +156,16 @@ li.completed {
     background-color: #0056b3; 
 }
 
+.task-date {
+    font-size: 12px;
+    color: #888;
+    margin-left: 10px;
+}
+
+li.editing input[type="text"] {
+    border: 2px solid #3498db;
+}
+
 /* Responsividad */
 @media (max-width: 768px) {
     .container {
@@ -167,6 +177,10 @@ li.completed {
         width: 70%;
     }
 
+    input[type="date"] {
+        width: 70%; /* Aseguramos que el input de fecha también sea responsivo */
+    }
+
     .buttons-container button {
         width: 100%;
         margin-top: 5px;
@@ -176,9 +190,11 @@ li.completed {
         font-size: 14px;
     }
 }
+
 @media (max-width: 400px) {
-    input[type="text"] {
-        width: 70%;
+    input[type="text"],
+    input[type="date"] { /* Aseguramos que ambos inputs tengan el mismo ancho */
+        width: 100%;
     }
 
     .buttons-container {
@@ -189,15 +205,13 @@ li.completed {
     .buttons-container button {
         width: 100%;
     }
-}
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
+    li {
+        flex-direction: column; /* Cambiar la dirección de flex para una mejor visualización en pantallas pequeñas */
+        align-items: flex-start; /* Alinear al inicio para una mejor legibilidad */
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+
+    .task-controls {
+        margin-top: 10px; /* Añadir un margen para separar los controles */
     }
 }
