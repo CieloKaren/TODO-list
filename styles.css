@@ -1,4 +1,3 @@
-/* Fuente y estilo base */
 body {
     font-family: 'Merriweather', serif;
     margin: 0;
@@ -7,11 +6,11 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #e9ecef; /* Color de fondo más suave */
+    background-color: #9cbbda;
 }
 
 .container {
-    background: #ffffff; /* Fondo blanco para la lista */
+    background: #ffffff; 
     padding: 25px;
     border-radius: 15px;
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
@@ -23,7 +22,6 @@ body {
     gap: 20px;
 }
 
-/* Estilo del encabezado */
 header h1 {
     text-align: center;
     margin-bottom: 15px;
@@ -32,7 +30,6 @@ header h1 {
     color: #333;
 }
 
-/* Formulario */
 form {
     display: flex;
     justify-content: space-between;
@@ -42,7 +39,7 @@ form {
 input[type="text"] {
     width: 75%;
     padding: 12px;
-    border: 2px solid #ced4da; /* Bordes más claros */
+    border: 2px solid #ced4da; 
     border-radius: 10px;
     font-size: 16px;
     font-family: 'Merriweather', serif;
@@ -50,14 +47,13 @@ input[type="text"] {
 }
 
 input[type="text"]:focus {
-    border-color: #3498db; /* Bordes azules al enfocar */
+    border-color: #3498db; 
     box-shadow: 0 0 8px rgba(52, 152, 219, 0.4);
 }
 
-/* Botón de agregar tarea */
 input[type="submit"] {
     padding: 12px 20px;
-    background-color: #28a745; /* Verde para el botón */
+    background-color: #28a745;+
     color: white;
     border: none;
     border-radius: 10px;
@@ -67,10 +63,9 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    background-color: #218838; /* Verde más oscuro al pasar el ratón */
+    background-color: #218838;
 }
 
-/* Estilo de la lista */
 ol {
     list-style: none;
     padding: 0;
@@ -83,7 +78,7 @@ li {
     align-items: center;
     padding: 15px;
     margin-bottom: 10px;
-    background-color: #f8f9fa; /* Color de fondo claro para las tareas */
+    background-color: #f8f9fa;
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
     transition: transform 0.2s, background-color 0.3s;
@@ -92,13 +87,13 @@ li {
 }
 
 li:hover {
-    transform: translateY(-3px); /* Efecto de elevación al pasar el ratón */
+    transform: translateY(-3px); 
 }
 
 li.completed {
     text-decoration: line-through;
     color: #888;
-    background-color: #e2e3e5; /* Color más claro para tareas completadas */
+    background-color: #e2e3e5; 
 }
 
 .task-controls {
@@ -113,7 +108,7 @@ li.completed {
 }
 
 .delete {
-    background-color: #dc3545; /* Rojo para el botón de eliminar */
+    background-color: #dc3545; 
     color: white;
     border: none;
     padding: 5px 10px;
@@ -124,7 +119,7 @@ li.completed {
 }
 
 .delete:hover {
-    background-color: #c82333; /* Rojo más oscuro al pasar el ratón */
+    background-color: #c82333; 
 }
 
 #task-counter {
@@ -141,7 +136,7 @@ li.completed {
 }
 
 .buttons-container button {
-    background-color: #007bff; /* Azul para los botones */
+    background-color: #007bff; 
     color: white;
     border: none;
     padding: 10px;
@@ -158,10 +153,29 @@ li.completed {
 }
 
 .buttons-container button:hover {
-    background-color: #0056b3; /* Azul más oscuro al pasar el ratón */
+    background-color: #0056b3; 
 }
 
 /* Responsividad */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        max-width: 90%;
+    }
+
+    input[type="text"] {
+        width: 70%;
+    }
+
+    .buttons-container button {
+        width: 100%;
+        margin-top: 5px;
+    }
+
+    li {
+        font-size: 14px;
+    }
+}
 @media (max-width: 400px) {
     input[type="text"] {
         width: 70%;
@@ -177,7 +191,6 @@ li.completed {
     }
 }
 
-/* Animación */
 @keyframes fadeIn {
     from {
         opacity: 0;

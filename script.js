@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('#new-task').onsubmit = (e) => {
         e.preventDefault();
         if (taskInput.value.trim() !== "") {
-            // Crear checkbox y elemento de la lista
             const cb = document.createElement('input');
             cb.type = 'checkbox';
             cb.classList.add('task-checkbox');
@@ -25,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
             li.appendChild(taskText);
 
             const deleteBtn = document.createElement('button');
-            deleteBtn.innerHTML = 'Delete';
+            deleteBtn.innerHTML = 'Eliminar';
             deleteBtn.classList.add('delete');
 
             const taskControls = document.createElement('div');
@@ -36,10 +35,8 @@ document.addEventListener('DOMContentLoaded', () => {
             li.appendChild(taskControls);
             taskList.appendChild(li);
 
-            // Reiniciar campo de entrada
             taskInput.value = '';
 
-            // Actualizar contador de tareas pendientes
             pendingTasks++;
             updateTaskCounter();
 
